@@ -1,0 +1,190 @@
+/* --- Manager Dashboard Theme --- */
+:root {
+    --primary-color: #4A90E2;
+    --primary-hover: #357ABD;
+    --secondary-color: #F4F7FC;
+    --text-color: #333;
+    --text-light: #777;
+    --border-color: #E0E0E0;
+    --white-color: #FFFFFF;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background-color: var(--secondary-color);
+    margin: 0;
+    color: var(--text-color);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.page-container {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.dashboard-header {
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.dashboard-header p {
+    margin: 0.25rem 0 0;
+    color: var(--text-light);
+}
+
+/* --- Filter Form Styles --- */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.filter-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-form .form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.quick-date-pills {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.quick-date-pills .btn-action {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.quick-date-pills .btn-action:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+.quick-date-pills .btn-action.active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+    font-weight: bold;
+}
+
+.filter-form input[type="date"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #000 !important;
+}
+
+.filter-actions .btn-submit {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* --- Summary KPI Cards --- */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    border-left: 5px solid var(--primary-color);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+.summary-card p {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0;
+    color: var(--text-color);
+}
+.summary-card#kpi-card-expenses { border-color: var(--danger-color); }
+.summary-card#kpi-card-patients { border-color: var(--success-color); }
+.summary-card#kpi-card-tests { border-color: var(--info); }
+
+
+/* --- Charts Section --- */
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.chart-container {
+    background: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+}
+
+.chart-container h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}

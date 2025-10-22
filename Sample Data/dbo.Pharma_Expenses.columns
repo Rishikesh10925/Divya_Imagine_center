@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"ExpID","INTEGER","2","2","0"
+"SubExpense","STRING","16","0","0"
+"MainExpense","STRING","15","0","0"

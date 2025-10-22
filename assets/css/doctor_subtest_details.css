@@ -1,0 +1,315 @@
+/* =================================================================
+   DOCTOR SUBTEST DETAILS - DEDICATED STYLESHEET
+   ================================================================= */
+
+/* --- Row Interaction --- */
+.doctor-row {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.doctor-name-cell {
+    cursor: pointer;
+    color: #4e73df;
+    font-weight: 500;
+    user-select: none;
+    position: relative;
+    padding-left: 25px !important; /* Make space for icon */
+}
+.doctor-name-cell:hover {
+    text-decoration: underline;
+    color: #2e59d9;
+}
+.expand-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    color: #4e73df;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* --- Detail Row Container --- */
+.detail-row {
+    background: #f8f9fc !important;
+    border-top: none !important;
+}
+
+.detail-row td {
+    background: #f8f9fc !important;
+    border-top: none !important;
+    padding: 0 !important;
+}
+
+.detail-content {
+    animation: slideDown 0.3s ease-out;
+    overflow: hidden;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 1000px;
+    }
+}
+
+/* --- Subtest Details Layout --- */
+.subtest-details-container {
+    background: #f8f9fc;
+    padding: 20px 30px;
+    border-left: 5px solid #4e73df;
+    margin: 0;
+}
+
+.subtest-details-container h4 {
+    margin: 0 0 20px 0;
+    color: #5a5c69;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subtest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.mismatch-warning {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 10px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #856404;
+    border-radius: 4px;
+}
+
+/* --- Category Cards --- */
+.subtest-category-card {
+    background: white;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e3e6f0;
+}
+
+.subtest-category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.subtest-category-card h5 {
+    margin: 0 0 15px 0;
+    color: #4e73df;
+    font-size: 15px;
+    font-weight: 700;
+    border-bottom: 3px solid #4e73df;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Subtest Items List --- */
+.subtest-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.subtest-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.subtest-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.subtest-list::-webkit-scrollbar-thumb {
+    background: #4e73df;
+    border-radius: 3px;
+}
+
+.subtest-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    border-bottom: 1px solid #e3e6f0;
+    font-size: 13px;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.subtest-item:hover {
+    background-color: #f8f9fc;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -5px;
+    margin-right: -5px;
+    border-radius: 4px;
+}
+
+.subtest-item:last-child {
+    border-bottom: none !important;
+}
+
+.subtest-item > div:first-child {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subtest-item > div:last-child {
+    text-align: right;
+    min-width: 120px;
+}
+
+/* --- Category Totals --- */
+.subtest-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin-top: 8px;
+    border-top: 2px solid #e3e6f0;
+    font-weight: 600;
+    font-size: 14px;
+    background: linear-gradient(to bottom, #f8f9fc 0%, white 100%);
+    padding: 10px;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -15px;
+    border-radius: 0 0 8px 8px;
+}
+
+/* --- Text & Color Styles --- */
+.subtest-item span:first-child {
+    color: #5a5c69;
+    font-weight: 500;
+}
+
+.subtest-item span:last-child {
+    color: #858796;
+    font-size: 11px;
+    margin-left: 8px;
+    font-weight: normal;
+}
+
+/* Test count styles */
+.subtest-item > div:last-child > div:first-child {
+    color: #4e73df;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Revenue styles */
+.subtest-item > div:last-child > div:last-child {
+    color: #1cc88a;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.subtest-total > div:last-child > div:first-child {
+    font-size: 15px;
+    color: #4e73df;
+}
+
+.subtest-total > div:last-child > div:last-child {
+    font-size: 13px;
+    color: #1cc88a;
+}
+
+/* --- Loading Spinner --- */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4e73df;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===========================
+   8. RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 768px) {
+    .subtest-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .subtest-details-container {
+        padding: 15px;
+    }
+    
+    .doctor-name-cell {
+        font-size: 13px;
+    }
+}
+
+/* ===========================
+   9. LOADING STATE
+   =========================== */
+.detail-content .spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4e73df;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+/* ===========================
+   10. EMPTY STATE
+   =========================== */
+.detail-content > div[style*="text-align: center"] {
+    padding: 30px 20px;
+    color: #858796;
+    font-style: italic;
+}
+
+/* ===========================
+   11. ACCESSIBILITY
+   =========================== */
+.doctor-name-cell:focus {
+    outline: 2px solid #4e73df;
+    outline-offset: 2px;
+}
+
+.subtest-category-card:focus-within {
+    box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.2);
+}
+
+/* ===========================
+   12. PRINT STYLES
+   =========================== */
+@media print {
+    .detail-row {
+        display: table-row !important;
+    }
+    
+    .expand-icon {
+        display: none;
+    }
+    
+    .subtest-category-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}

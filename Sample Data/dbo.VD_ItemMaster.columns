@@ -1,0 +1,7 @@
+"name","type","length","leftDigits","rightDigits"
+"ItemID","INTEGER","1","1","0"
+"Category","STRING","29","0","0"
+"Units","STRING","0","0","0"
+"ItemCode","STRING","15","0","0"
+"ItemDescription","STRING","0","0","0"
+"Rate","DECIMAL","6","4","1"

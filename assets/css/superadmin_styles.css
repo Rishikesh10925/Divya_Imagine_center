@@ -1,0 +1,226 @@
+/*
+================================================================
+|             SUPERADMIN ROLE - DEDICATED STYLESHEET           |
+================================================================
+*/
+
+/* --- Base Styles for Superadmin --- */
+body.role-superadmin {
+    background-color: #f8f9fc;
+    font-family: 'Poppins', sans-serif;
+    color: #5a5c69;
+}
+
+/* --- Compare Page Styles --- */
+.compare-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: stretch;
+    width: 100%;
+}
+
+.compare-panel {
+    flex: 1; /* This is the key: makes each panel take up equal space */
+    min-width: 0; /* Prevents overflow issues with flex items */
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    padding: 1.5rem;
+}
+
+.panel-header {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.panel-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.comparison-results-container {
+    flex-grow: 1; /* Make the results container fill the remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    margin-top: 1.5rem;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: #858796;
+    font-style: italic;
+    padding: 2rem;
+    border: 2px dashed #e3e6f0;
+    border-radius: 0.35rem;
+    background-color: #f8f9fc;
+}
+
+.placeholder-text.error {
+    color: #e74a3b;
+    border-color: #e74a3b;
+    background-color: #fdf2f2;
+}
+
+@media (max-width: 768px) {
+    .compare-container {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.filter-form-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.page-card {
+    background-color: #fff;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    margin-bottom: 1.5rem;
+}
+
+.filter-bar {
+    padding: 1.25rem;
+}
+
+.data-table {
+    width: max-content;
+    min-width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.table-scroll-x {
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.data-table th, .data-table td {
+    padding: 0.75rem;
+    border: 1px solid #e3e6f0;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.data-table thead th {
+    background-color: #f8f9fc;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.data-table thead th[colspan] {
+    text-align: center;
+    background-color: #e9ecef;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f8f9fc;
+}
+
+.data-table td:first-child, .data-table th:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+    z-index: 3;
+    box-shadow: 2px 0 8px -2px rgba(0,0,0,0.08);
+}
+
+.data-table thead th:first-child {
+    z-index: 4;
+}
+
+/* Totals row styling - ensure sticky column has matching background */
+.data-table tbody tr.totals-row td:first-child {
+    background-color: #f8f9fc;
+    box-shadow: 2px 0 8px -2px rgba(0,0,0,0.08);
+}
+
+
+/* --- Notification Corner --- */
+.notification-corner { position: fixed; top: 80px; right: 20px; width: 320px; z-index: 1050; }
+.notification-item {
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 10px;
+    border-left: 5px solid #4e73df;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.5s forwards;
+}
+.notification-item.fade-out { animation: slideOut 0.5s forwards; }
+.notification-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+.notification-title { font-weight: 600; }
+.notification-close { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #aaa; }
+.notification-body { font-size: 0.9rem; color: #555; }
+@keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+@keyframes slideOut { to { opacity: 0; transform: translateX(110%); } }
+
+/* --- SweetAlert2 Pop-up Styling --- */
+.swal2-popup {
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px !important;
+}
+.swal2-title {
+    font-weight: 600 !important;
+    color: #5a5c69 !important;
+}
+.swal2-confirm {
+    background-color: #4e73df !important;
+    border-radius: 5px !important;
+}
+
+/* --- NEW: Deep Analysis Page Styles --- */
+#months {
+    min-height: 120px; /* Make multi-select taller */
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4e73df;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 992px) {
+    .compare-container {
+        flex-direction: column;
+    }
+}
+
+.compare-filter-form {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    align-items: end;
+}
+
+.form-grid .form-group { margin-bottom: 0; }

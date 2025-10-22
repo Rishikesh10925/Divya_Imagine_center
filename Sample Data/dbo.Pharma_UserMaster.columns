@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"UserID","INTEGER","1","1","0"
+"Designation","STRING","6","0","0"
+"UserPwd","STRING","32","0","0"
